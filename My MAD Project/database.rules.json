@@ -1,0 +1,19 @@
+{
+  "rules": {
+    "users": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid"
+      }
+    },
+    "services": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "bookings": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+      ".indexOn": "userId"
+    }
+  }
+}
